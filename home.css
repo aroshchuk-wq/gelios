@@ -1,0 +1,214 @@
+body.home-page {
+  --gh-ink: #151a20;
+  --gh-quiet: #555a60;
+  --gh-paper: #f8f8f7;
+  --gh-radius: 13px;
+  background: var(--gh-paper);
+  color: var(--gh-ink);
+  font: 16px/1.4 "Avenir Next", "Segoe UI", Arial, sans-serif;
+}
+.home-page > :is(.bar, header, footer:not(#home-footer)) { display: none; }
+.home-page :is(h1, h2, h3, p, ul) { margin: 0; }
+.home-page :is(h1, h2, h3) { letter-spacing: -.028em; line-height: 1.08; }
+.home-page h2 { font-size: clamp(29px, 2.65vw, 51px); font-weight: 400; }
+.home-page h3 { font-size: clamp(17px, 1.46vw, 28px); font-weight: 650; }
+.home-page a { text-decoration: none; }
+.home-page button { font-family: inherit; }
+.home-page [hidden] { display: none !important; }
+.home-page .gh-section:focus { outline: none; }
+.home-page .gh-wrap { width: 87%; max-width: 1690px; margin-inline: auto; }
+.home-page #app > section { padding: 0; }
+.home-page .gh-section > .gh-wrap { padding-block: clamp(26px, 2.2vw, 46px); }
+.home-page .gh-section p { font-size: clamp(15px, 1.28vw, 24px); color: var(--gh-quiet); }
+.home-page .gh-heading + p { margin-top: .55em; }
+.home-page .gh-dark { color: #fff; background-color: #1b232a; }
+.home-page .gh-dark p { color: #f3f4f4; }
+.home-page .gh-heading { display: flex; align-items: center; gap: clamp(15px, 2.9vw, 56px); }
+.home-page .gh-index { display: inline-flex; align-items: center; gap: 14px; color: #646b71; font-size: 1.13rem; white-space: nowrap; }
+.home-page .gh-index::after { content: ''; width: 27px; height: 1px; background: currentColor; opacity: .38; }
+.home-page .gh-dark .gh-index { color: #e5e8ed; }
+.home-page .gh-more { margin-left: auto; color: var(--gh-quiet); }
+.home-page .gh-dark .gh-more { color: #fff; }
+.home-page .gh-icon {
+  display: inline-block;
+  background: currentColor;
+  mask: var(--gh-icon) center / contain no-repeat;
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+}
+.home-page :is(.gh-pill, .gh-more, .gh-scroll, .gh-circle) { display: inline-flex; align-items: center; gap: .9em; }
+.home-page :is(.gh-pill, .gh-more, .gh-scroll) { font-size: clamp(12px, 1.03vw, 19px); font-weight: 550; }
+.home-page .gh-pill { justify-content: center; border: 1px solid transparent; border-radius: 100px; background: var(--gh-ink); color: #fff; padding: .8em 2.2em; margin: 0; }
+.home-page .gh-dark .gh-pill, .home-page .gh-hero .gh-pill { background: #fafafa; color: var(--gh-ink); }
+.home-page :is(.gh-pill, .gh-more, .gh-scroll, .gh-circle):hover { filter: brightness(.83); }
+.home-page .gh-circle { box-sizing: border-box; width: 2em; height: 2em; flex: none; justify-content: center; border-radius: 50%; border: 1px solid #dfe0df; color: var(--gh-ink); }
+.home-page .gh-circle .gh-icon { width: 1em; height: 1em; }
+.home-page .gh-photo { display: block; width: 100%; object-fit: cover; }
+
+.home-page .gh-hero {
+  min-height: clamp(535px, 43.5vw, 835px);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background: linear-gradient(90deg, #0c131968, transparent 74%),
+    linear-gradient(180deg, #15253294, transparent 24%, #080a0f38 65%, #080a0fa8),
+    #28323b url("assets/home/images/hero_mountains.webp") 50% 42% / cover no-repeat;
+}
+.home-page .gh-header { padding: clamp(16px, 1.4vw, 28px) 0; flex-wrap: nowrap; background: transparent; }
+.home-page .gh-brand { display: inline-flex; align-items: center; gap: 1.35em; }
+.home-page .gh-brand > span { font-size: clamp(23px, 2.05vw, 39px); font-weight: 500; letter-spacing: -.045em; }
+.home-page .gh-brand small { font-size: clamp(8px, .61vw, 12px); line-height: 1.15; }
+.home-page .gh-header nav { gap: clamp(16px, 2.7vw, 54px); align-items: center; }
+.home-page .gh-header nav a { font-size: clamp(12px, .99vw, 19px); font-weight: 550; }
+.home-page .gh-header nav a:last-child { background: #fafafa; color: var(--gh-ink); border-radius: 10px; padding: .75em 1.8em; }
+.home-page .gh-menu { display: none; }
+.home-page .gh-hero-inner {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr clamp(136px, 11vw, 205px);
+  align-items: center;
+  gap: 24px;
+  padding-block: 18px;
+}
+.home-page .gh-hero h1 { font-size: clamp(39px, 4.05vw, 78px); font-weight: 400; }
+.home-page .gh-hero p { max-width: 35em; margin: .7em 0 1.45em; font-size: clamp(16px, 1.43vw, 28px); }
+.home-page .gh-hero-projects { display: inline-block; margin-left: 1em; font-size: clamp(12px, 1.03vw, 19px); text-decoration: underline; text-underline-offset: .25em; }
+.home-page .gh-strengths { list-style: none; padding: 0; font-size: clamp(15px, 1.25vw, 24px); line-height: 1.16; font-weight: 550; }
+.home-page .gh-strengths li { padding: 1.4em 0; }
+.home-page .gh-strengths li + li { border-top: 1px solid #fff6; }
+.home-page .gh-hero-bottom { display: flex; align-items: center; justify-content: space-between; padding-bottom: clamp(20px, 2.2vw, 42px); }
+.home-page .gh-hero-index { font-size: 1.05rem; }
+.home-page .gh-scroll .gh-icon { transform: rotate(90deg); }
+.home-page .gh-scroll { position: relative; padding-right: 11px; min-height: 40px; }
+.home-page .gh-scroll::after { content: ''; border: 1px solid #fff9; border-radius: 50%; width: 36px; height: 36px; position: absolute; right: 0; pointer-events: none; }
+
+.home-page .gh-about { background: linear-gradient(90deg, #f1f0eef2 35%, #f1f0ee90), #f1f0ee url("assets/home/patterns/topographic_lines.svg") right center / auto 105% no-repeat; }
+.home-page .gh-about > .gh-wrap { padding-block: clamp(34px, 3.1vw, 60px); min-height: 40vw; }
+.home-page :is(.gh-about-grid, .gh-contact-grid) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr); gap: clamp(28px, 4vw, 77px); align-items: start; }
+.home-page .gh-about .gh-heading { display: grid; justify-content: start; gap: .45em; }
+.home-page .gh-about h2 { font-size: clamp(33px, 3.15vw, 61px); }
+.home-page .gh-about p { margin: .85em 0; }
+.home-page .gh-about figure { display: grid; border-radius: var(--gh-radius); overflow: hidden; position: relative; }
+.home-page .gh-about figure > * { grid-area: 1 / 1; }
+.home-page .gh-about .gh-photo { aspect-ratio: 1.6; object-position: right; }
+.home-page .gh-about figcaption { align-self: end; z-index: 1; padding: 2.2em 1.4em 1.15em; font-size: clamp(13px, 1.25vw, 24px); color: white; background: linear-gradient(transparent, #10161cbd); }
+.home-page :is(.gh-capabilities, .gh-partner-types) { padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .65em; }
+.home-page .gh-capabilities { margin-top: clamp(18px, 2.3vw, 44px); }
+.home-page .gh-capabilities li { border: 1px solid #dfdfdc; border-radius: 10px; padding: .85em 1.25em; background: #ffffff62; font-weight: 600; }
+
+.home-page .gh-grid { display: grid; gap: clamp(12px, 1.18vw, 23px); }
+.home-page .gh-four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.home-page .gh-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-page .gh-services .gh-grid { margin-top: clamp(16px, 1.85vw, 35px); }
+.home-page .gh-card { display: flex; flex-direction: column; min-width: 0; border-radius: var(--gh-radius); overflow: hidden; }
+.home-page .gh-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: .7em; padding: clamp(14px, 1.8vw, 34px); }
+.home-page .gh-card-body p { font-size: clamp(14px, 1.05vw, 20px); line-height: 1.32; }
+.home-page .gh-card-body > .gh-icon { width: 1.55em; height: 1.55em; }
+.home-page .gh-card-body > .gh-circle { margin-top: auto; }
+.home-page .gh-service { background: #efefed; }
+.home-page .gh-service .gh-photo { aspect-ratio: 1.75; }
+.home-page .gh-service:nth-child(4) .gh-photo { object-fit: cover; object-position: right; scale: 1.04; transform-origin: right bottom; }
+.home-page .gh-service .gh-card-body { min-height: clamp(195px, 20.5vw, 394px); }
+.home-page .gh-service .gh-circle { background: var(--gh-ink); color: #fff; border-color: transparent; }
+.home-page .gh-tech {
+  background: linear-gradient(90deg, #131820c2 0%, #14191d24 72%),
+    linear-gradient(0deg, #19191bb8, transparent 70%),
+    #23282d url("assets/home/images/technology_equipment_panorama.webp") 77% center / cover no-repeat;
+}
+.home-page .gh-tech p { max-width: 38em; }
+.home-page .gh-tech .gh-grid { margin-top: clamp(54px, 7.4vw, 142px); }
+.home-page .gh-glass { border: 1px solid #ffffff45; background: linear-gradient(145deg, #282d32d4, #232323bc); }
+.home-page .gh-glass .gh-card-body { min-height: clamp(213px, 21.9vw, 420px); }
+.home-page .gh-glass .gh-circle { color: white; border-color: #ffffff70; }
+
+.home-page .gh-filters { display: flex; flex-wrap: wrap; gap: .55em; margin: .85em 0 .95em; }
+.home-page .gh-filters button { border: 1px solid #d9dbdd; background: transparent; color: var(--gh-ink); margin: 0; min-width: 6em; padding: .48em 1.45em; font-size: clamp(12px, 1vw, 19px); }
+.home-page .gh-filters button[aria-pressed="true"] { background: var(--gh-ink); color: white; border-color: var(--gh-ink); }
+.home-page .gh-story { border: 1px solid #e0e1e1; }
+.home-page .gh-story .gh-photo { aspect-ratio: 2.11; border-radius: calc(var(--gh-radius) - 1px); }
+.home-page .gh-story .gh-card-body { padding: clamp(12px, 1.22vw, 23px); }
+.home-page .gh-story h3 { font-size: clamp(15px, 1.25vw, 24px); overflow-wrap: anywhere; }
+.home-page .gh-story h3 a:hover { text-decoration: underline; }
+.home-page .gh-card-foot { display: flex; justify-content: space-between; align-items: end; gap: .5em; width: 100%; margin-top: auto; color: var(--gh-quiet); font-size: clamp(12px, .97vw, 19px); }
+.home-page .gh-projects .gh-story .gh-card-body { min-height: clamp(100px, 10.7vw, 205px); }
+.home-page .gh-partners {
+  background: linear-gradient(90deg, #131820df, #14191d99), #212a31
+    url("assets/home/images/dark_mountain_texture.webp") center / cover no-repeat;
+}
+.home-page .gh-partner-types { margin-top: 1em; }
+.home-page .gh-partner-types li { border: 1px solid #ffffff55; border-radius: 10px; background: #ffffff0d; min-width: 14em; padding: 1em 1.25em; text-align: center; }
+.home-page .gh-press { background: #f1f0ee; }
+.home-page .gh-press .gh-grid { margin-top: 1em; }
+.home-page .gh-press .gh-photo { aspect-ratio: 3.88; }
+
+.home-page .gh-safety {
+  background: linear-gradient(90deg, #10161cdb, #131a2250 57%, transparent),
+    #26323b url("assets/home/images/safety_mountain_team_panorama.webp") center / cover no-repeat;
+}
+.home-page .gh-safety .gh-heading { display: grid; gap: .45em; max-width: 470px; }
+.home-page .gh-safety p { max-width: 37em; margin: .6em 0 1em; }
+.home-page .gh-contacts p { margin: .85em 0; }
+.home-page .gh-contacts .gh-more { margin: 0; }
+.home-page .gh-form-fields { border: 1px solid #d8dbdd; border-radius: var(--gh-radius); padding: 4px 18px; }
+.home-page .gh-form label { margin: 0; display: grid; grid-template-columns: minmax(95px, 1fr) minmax(0, 2fr); align-items: baseline; gap: 10px; font-size: clamp(13px, 1vw, 19px); color: var(--gh-quiet); }
+.home-page .gh-form label + label { border-top: 1px solid #e0e1e1; }
+.home-page .gh-form :is(input, textarea) { padding: .55em .35em; background: transparent; border: 0; min-width: 0; }
+.home-page .gh-form textarea { resize: vertical; }
+.home-page .gh-form .gh-pill { margin: .7em 0 0; }
+.home-page .gh-form p { font-size: .86em; margin: .4em 0 0; }
+
+.home-page #home-footer { padding: 0; background: #151a20; color: white; }
+.home-page .gh-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding-block: clamp(24px, 2.6vw, 50px); }
+.home-page #home-footer nav { gap: clamp(10px, 1.1vw, 21px); }
+.home-page #home-footer :is(nav, .gh-footer-tools) { font-size: clamp(11px, .85vw, 16px); color: #e1e2e4; }
+.home-page .gh-footer-tools { display: grid; gap: .5em; }
+.home-page .gh-notes { background: none; border: 0; font: inherit; color: inherit; margin: 0; padding: 0; text-align: left; }
+.home-page #home-footer :is(a, button):hover { text-decoration: underline; }
+
+@media (max-width: 1100px) {
+  .home-page .gh-header nav { gap: 13px; }
+  .home-page .gh-header .gh-brand small { display: none; }
+  .home-page .gh-glass .gh-card-body { min-height: 218px; }
+}
+@media (max-width: 900px) {
+  .home-page .gh-footer-inner { flex-wrap: wrap; }
+  .home-page .gh-four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .gh-service .gh-card-body { min-height: 172px; }
+  .home-page .gh-tech { background-position: 64% center; }
+}
+@media (max-width: 760px) {
+  .home-page .gh-wrap { width: 89%; }
+  .home-page .gh-header { position: relative; z-index: 2; }
+  .home-page .gh-header .gh-brand small { display: block; }
+  .home-page .gh-menu { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; margin: 0; background: #141a22a6; border: 1px solid #fff8; }
+  .home-page .gh-menu .gh-icon { width: 23px; height: 23px; }
+  .home-page .gh-header nav { display: none; position: absolute; inset: 100% 0 auto; background: #171d23; border-radius: var(--gh-radius); padding: 12px; }
+  .home-page .gh-menu[aria-expanded="true"] + nav { display: grid; gap: 2px; }
+  .home-page .gh-header nav a { font-size: 15px; padding: .62em .8em; }
+  .home-page .gh-header nav a:last-child { padding: .62em .8em; }
+  .home-page .gh-hero { min-height: 565px; background-position: 62% center; }
+  .home-page .gh-hero-inner { grid-template-columns: 1fr; align-content: center; }
+  .home-page .gh-hero h1 { font-size: clamp(33px, 6.5vw, 49px); }
+  .home-page .gh-hero p { max-width: 29em; }
+  .home-page .gh-strengths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; font-size: 13px; }
+  .home-page .gh-strengths li, .home-page .gh-strengths li + li { border-top: 1px solid #fff7; padding: .75em 0 0; }
+  .home-page :is(.gh-about-grid, .gh-contact-grid) { grid-template-columns: 1fr; }
+  .home-page .gh-heading { flex-wrap: wrap; gap: 8px 13px; }
+  .home-page .gh-heading h2 { flex: 1 1 72%; }
+  .home-page .gh-index { gap: 6px; font-size: 13px; }
+  .home-page .gh-index::after { width: 12px; }
+  .home-page .gh-heading .gh-more { margin-left: 0; }
+  .home-page .gh-tech {
+    background: linear-gradient(180deg, #13182042, #1b232a 360px),
+      #1b232a url("assets/home/images/technology_equipment_panorama.webp") 76% top / auto 360px no-repeat;
+  }
+  .home-page .gh-tech .gh-grid { margin-top: 35px; }
+  .home-page .gh-safety { background-position: 58% center; }
+}
+@media (max-width: 520px) {
+  .home-page .gh-three { grid-template-columns: 1fr; }
+  .home-page .gh-glass .gh-card-body { min-height: 235px; }
+  .home-page .gh-capabilities li { padding: .65em .8em; font-size: 14px; }
+  .home-page .gh-partner-types li { min-width: 0; padding: .7em .85em; font-size: 14px; }
+}
