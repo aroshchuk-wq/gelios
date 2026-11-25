@@ -206,10 +206,12 @@ function homeMarkup() {
   ${homeBlock('partners', 'gh-partners gh-dark', `
     ${homeHeading('06', 'Партнёры и сотрудничество', homeLink('about/partners', 'О сотрудничестве', 'gh-more'))}
     <p>Для комплексных задач объединяем необходимые методы, оборудование и компетенции. В каждом проекте отдельно показываем вклад участников.</p>
-    <ul class="gh-partner-types">
-      <li><strong>ИРНИТУ</strong><span>Совместные исследования</span></li>
-      <li><strong>ИЗК СО РАН</strong><span>Совместные публикации</span></li>
-      <li><strong>Фонд «Сколково»</strong><span>Грантовая поддержка</span></li>
+    <ul class="gh-partner-grid">
+      <li><img src="${homeAssets}/partners/01_alrosa_white.svg" alt="АЛРОСА" loading="lazy"></li>
+      <li><img src="${homeAssets}/partners/03_rosatom_white.svg" alt="РОСАТОМ" loading="lazy"></li>
+      <li><img src="${homeAssets}/partners/04_skolkovo_white.svg" alt="СКОЛКОВО" loading="lazy"></li>
+      <li><img src="${homeAssets}/partners/05_eage_white.svg" alt="EAGE" loading="lazy"></li>
+      <li>${homeLink('about/partners', '+ ещё', 'gh-partner-more')}</li>
     </ul>`)}
   ${homeBlock('press', 'gh-press', `
     ${homeHeading('07', 'Пресс-центр', homeLink('materials', 'Все материалы', 'gh-more'))}

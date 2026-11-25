@@ -3,7 +3,7 @@ body.home-page {
   --gh-quiet: #555a60;
   --gh-paper: #f8f8f7;
   --gh-radius: 15px;
-  --gh-section-space: clamp(76px, 7.3vw, 140px);
+  --gh-section-space: clamp(58px, 5.45vw, 105px);
   background: var(--gh-paper);
   color: var(--gh-ink);
   font: 16px/1.54 "Avenir Next", "Segoe UI", Arial, sans-serif;
@@ -48,7 +48,7 @@ body.home-page {
 .home-page .gh-photo { display: block; width: 100%; object-fit: cover; }
 
 .home-page .gh-hero {
-  min-height: max(670px, 100svh);
+  min-height: max(635px, 92svh);
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -70,7 +70,7 @@ body.home-page {
   grid-template-columns: 1fr clamp(136px, 11vw, 205px);
   align-items: center;
   gap: 24px;
-  padding-block: 42px;
+  padding-block: 36px;
 }
 .home-page .gh-hero h1 { font-size: clamp(39px, 4.05vw, 78px); font-weight: 400; }
 .home-page .gh-hero p { max-width: 35em; margin: 1.15em 0 2em; font-size: clamp(16px, 1.43vw, 28px); }
@@ -95,14 +95,14 @@ body.home-page {
 .home-page .gh-about figure > * { grid-area: 1 / 1; }
 .home-page .gh-about .gh-photo { aspect-ratio: 1.28; object-position: 68% center; }
 .home-page .gh-about figcaption { align-self: end; z-index: 1; padding: 2.2em 1.4em 1.15em; font-size: clamp(13px, 1.25vw, 24px); color: white; background: linear-gradient(transparent, #10161cbd); }
-.home-page :is(.gh-capabilities, .gh-partner-types) { padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .65em; }
+.home-page .gh-capabilities { padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .65em; }
 .home-page .gh-capabilities { margin-top: clamp(25px, 3vw, 54px); }
 .home-page .gh-capabilities li { border: 1px solid #dfdfdc; border-radius: 10px; padding: .85em 1em; background: #ffffff62; display: grid; gap: .2em; }
 
 .home-page .gh-grid { display: grid; gap: clamp(14px, 1.65vw, 32px); }
 .home-page .gh-four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .home-page .gh-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.home-page .gh-services .gh-grid { margin-top: clamp(25px, 3.4vw, 65px); }
+.home-page .gh-services .gh-grid { margin-top: clamp(22px, 2.85vw, 55px); }
 .home-page .gh-card { display: flex; flex-direction: column; min-width: 0; border-radius: var(--gh-radius); overflow: hidden; }
 .home-page .gh-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 1em; padding: clamp(15px, 2.08vw, 40px); }
 .home-page .gh-card-body p { font-size: clamp(14px, 1.05vw, 20px); line-height: 1.48; }
@@ -111,7 +111,7 @@ body.home-page {
 .home-page .gh-card-body > p { margin-bottom: .85em; }
 .home-page .gh-service { background: #efefed; }
 .home-page .gh-service .gh-photo { aspect-ratio: 1.29; }
-.home-page .gh-service .gh-card-body { min-height: clamp(227px, 19.6vw, 375px); }
+.home-page .gh-service .gh-card-body { min-height: clamp(207px, 17.5vw, 336px); }
 .home-page .gh-service .gh-circle { background: var(--gh-ink); color: #fff; border-color: transparent; }
 .home-page .gh-tech {
   background: linear-gradient(90deg, #131820c2 0%, #14191d24 72%),
@@ -119,9 +119,9 @@ body.home-page {
     #23282d url("assets/home/photography/equipment.jpg") 77% center / cover no-repeat;
 }
 .home-page .gh-tech p { max-width: 38em; }
-.home-page .gh-tech .gh-grid { margin-top: clamp(70px, 10vw, 192px); }
+.home-page .gh-tech .gh-grid { margin-top: clamp(58px, 8vw, 154px); }
 .home-page .gh-glass { border: 1px solid #ffffff45; background: linear-gradient(145deg, #282d32d4, #232323bc); }
-.home-page .gh-glass .gh-card-body { min-height: clamp(250px, 22vw, 422px); }
+.home-page .gh-glass .gh-card-body { min-height: clamp(226px, 19.25vw, 370px); }
 .home-page .gh-glass .gh-circle { color: white; border-color: #ffffff70; }
 
 .home-page .gh-filters { display: flex; flex-wrap: wrap; gap: .55em; margin: clamp(21px, 2.2vw, 42px) 0 clamp(22px, 2.35vw, 45px); }
@@ -133,16 +133,14 @@ body.home-page {
 .home-page .gh-story h3 { font-size: clamp(16px, 1.37vw, 26px); overflow-wrap: anywhere; }
 .home-page .gh-story h3 a:hover { text-decoration: underline; }
 .home-page .gh-card-foot { display: flex; justify-content: space-between; align-items: end; gap: .5em; width: 100%; margin-top: auto; color: var(--gh-quiet); font-size: clamp(12px, .97vw, 19px); }
-.home-page .gh-projects .gh-story .gh-card-body { min-height: clamp(142px, 12.8vw, 245px); }
+.home-page .gh-projects .gh-story .gh-card-body { min-height: clamp(124px, 10.45vw, 201px); }
 .home-page .gh-partners {
   background: linear-gradient(90deg, #131820df, #14191d99), #212a31
     url("assets/home/photography/partners.webp") center / cover no-repeat;
 }
-.home-page .gh-partner-types { margin-top: clamp(24px, 3vw, 55px); }
-.home-page .gh-partner-types li { border: 1px solid #ffffff55; border-radius: 10px; background: #ffffff0d; flex: 1 1 13em; padding: clamp(19px, 2.6vw, 50px) 1.25em; text-align: center; display: grid; gap: .5em; }
 .home-page .gh-press { background: #f1f0ee; }
-.home-page .gh-press .gh-grid { margin-top: clamp(24px, 3.3vw, 62px); }
-.home-page .gh-press .gh-story .gh-card-body { min-height: clamp(130px, 10vw, 190px); }
+.home-page .gh-press .gh-grid { margin-top: clamp(21px, 2.8vw, 54px); }
+.home-page .gh-press .gh-story .gh-card-body { min-height: clamp(112px, 8.5vw, 163px); }
 .home-page .gh-press .gh-photo { aspect-ratio: 1.56; }
 
 .home-page .gh-safety {
@@ -150,11 +148,10 @@ body.home-page {
     #26323b url("assets/home/photography/safety.jpg") right center / cover no-repeat;
 }
 .home-page .gh-safety .gh-heading { display: grid; gap: .65em; max-width: 690px; }
-.home-page .gh-safety > .gh-wrap { padding-block: clamp(105px, 11vw, 212px); }
+.home-page .gh-safety > .gh-wrap { padding-block: clamp(90px, 8.7vw, 168px); }
 .home-page .gh-safety p { max-width: 37em; margin: 1em 0 1.65em; }
-.home-page .gh-capabilities strong, .home-page .gh-partner-types strong { font-size: clamp(17px, 1.45vw, 27px); }
+.home-page .gh-capabilities strong { font-size: clamp(17px, 1.45vw, 27px); }
 .home-page .gh-capabilities span { color: var(--gh-quiet); font-size: .83em; }
-.home-page .gh-partner-types span { color: #e2e5e9; font-size: .9em; }
 .home-page .gh-contact-label { display: flex; align-items: center; gap: 1.15em; color: var(--gh-quiet); margin-bottom: 1.15em; }
 .home-page .gh-contacts { background: #f3f2ef; }
 .home-page .gh-contacts h2 { font-size: clamp(36px, 4.4vw, 82px); }
@@ -186,7 +183,7 @@ body.home-page {
 .home-page .gh-form-result { border-left: 2px solid #7e9e92; padding-left: .75em; }
 
 .home-page #home-footer { padding: 0; background: #151a20; color: white; }
-.home-page .gh-footer-inner { display: grid; grid-template-columns: 1.18fr .8fr 1.05fr 1fr; gap: clamp(22px, 3vw, 60px); padding-block: clamp(44px, 5vw, 90px); }
+.home-page .gh-footer-inner { display: grid; grid-template-columns: 1.18fr .8fr 1.05fr 1fr; gap: clamp(22px, 3vw, 60px); padding-block: clamp(40px, 4.55vw, 82px); }
 .home-page .gh-footer-inner h2 { font-size: clamp(17px, 1.35vw, 25px); font-weight: 550; margin-bottom: 1.1em; }
 .home-page .gh-footer-inner p { margin-top: .9em; color: #d3d8dc; }
 .home-page #home-footer nav { display: grid; gap: .6em; }
@@ -199,18 +196,18 @@ body.home-page {
 @media (max-width: 1100px) {
   .home-page .gh-header nav { gap: 13px; }
   .home-page .gh-header .gh-brand small { display: none; }
-  .home-page .gh-glass .gh-card-body { min-height: 245px; }
+  .home-page .gh-glass .gh-card-body { min-height: 226px; }
 }
 @media (max-width: 900px) {
   .home-page .gh-footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-page .gh-contact-grid { grid-template-columns: 1fr; }
   .home-page .gh-four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home-page .gh-service .gh-card-body { min-height: 200px; }
+  .home-page .gh-service .gh-card-body { min-height: 183px; }
   .home-page .gh-tech { background-position: 64% center; }
 }
 @media (max-width: 760px) {
   .home-page .gh-wrap { width: 89%; }
-  body.home-page { --gh-section-space: clamp(52px, 9vw, 75px); }
+  body.home-page { --gh-section-space: clamp(39px, 7.4vw, 60px); }
   .home-page .gh-header { position: relative; z-index: 2; }
   .home-page .gh-header .gh-brand small { display: block; }
   .home-page .gh-menu { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; margin: 0; background: #141a22a6; border: 1px solid #fff8; }
@@ -219,7 +216,7 @@ body.home-page {
   .home-page .gh-menu[aria-expanded="true"] + nav { display: grid; gap: 2px; }
   .home-page .gh-header nav a { font-size: 15px; padding: .62em .8em; }
   .home-page .gh-header nav a:last-child { padding: .62em .8em; }
-  .home-page .gh-hero { min-height: max(625px, 92svh); background-position: 64% center; }
+  .home-page .gh-hero { min-height: max(595px, 87svh); background-position: 64% center; }
   .home-page .gh-hero-inner { grid-template-columns: 1fr; align-content: center; }
   .home-page .gh-hero h1 { font-size: clamp(33px, 6.5vw, 49px); }
   .home-page .gh-hero p { max-width: 29em; }
@@ -235,9 +232,9 @@ body.home-page {
     background: linear-gradient(180deg, #13182042, #1b232a 360px),
       #1b232a url("assets/home/photography/equipment.jpg") 76% top / auto 360px no-repeat;
   }
-  .home-page .gh-tech .gh-grid { margin-top: 65px; }
+  .home-page .gh-tech .gh-grid { margin-top: 53px; }
   .home-page .gh-safety { background-image: linear-gradient(90deg, #10161ce6, #131a2270), url("assets/home/photography/safety.jpg"); }
-  .home-page .gh-safety > .gh-wrap { padding-block: 95px; }
+  .home-page .gh-safety > .gh-wrap { padding-block: 77px; }
 }
 @media (max-width: 520px) {
   .home-page .gh-form-fields { grid-template-columns: 1fr; }
@@ -245,7 +242,46 @@ body.home-page {
   .home-page .gh-footer-inner .gh-brand { flex-direction: column; align-items: flex-start; gap: .25em; }
   .home-page .gh-press .gh-story .gh-card-body { min-height: auto; }
   .home-page .gh-three { grid-template-columns: 1fr; }
-  .home-page .gh-glass .gh-card-body { min-height: 255px; }
+  .home-page .gh-glass .gh-card-body { min-height: 226px; }
   .home-page .gh-capabilities li { padding: .65em .8em; font-size: 14px; }
-  .home-page .gh-partner-types li { min-width: 0; padding: 1em .85em; font-size: 14px; flex-basis: 100%; }
+}
+
+.home-page .gh-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(10px, 1.3vw, 25px);
+  margin-top: clamp(21px, 2.65vw, 51px);
+  padding: 0;
+  list-style: none;
+}
+.home-page .gh-partner-grid li {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: clamp(78px, 7.5vw, 144px);
+  border: 1px solid #ffffff55;
+  border-radius: 10px;
+  background: #ffffff0d;
+}
+.home-page .gh-partner-grid img {
+  display: block;
+  width: 87%;
+  height: 73%;
+  object-fit: contain;
+}
+.home-page .gh-partner-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65em;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.home-page .gh-partner-more:hover { background: #ffffff1a; }
+.home-page .gh-partner-more:focus-visible { outline-offset: -4px; }
+
+@media (max-width: 640px) {
+  .home-page .gh-partner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-page .gh-partner-grid li:last-child { grid-column: 1 / -1; }
 }
