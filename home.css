@@ -25,9 +25,6 @@ body.home-page {
 .home-page .gh-dark { color: #fff; background-color: #1b232a; }
 .home-page .gh-dark p { color: #f3f4f4; }
 .home-page .gh-heading { display: flex; align-items: center; gap: clamp(15px, 2.9vw, 56px); }
-.home-page .gh-index { display: inline-flex; align-items: center; gap: 14px; color: #646b71; font-size: 1.13rem; white-space: nowrap; }
-.home-page .gh-index::after { content: ''; width: 27px; height: 1px; background: currentColor; opacity: .38; }
-.home-page .gh-dark .gh-index { color: #e5e8ed; }
 .home-page .gh-more { margin-left: auto; color: var(--gh-quiet); }
 .home-page .gh-dark .gh-more { color: #fff; }
 .home-page .gh-icon {
@@ -78,8 +75,7 @@ body.home-page {
 .home-page .gh-strengths { list-style: none; padding: 0; font-size: clamp(16px, 1.37vw, 26px); line-height: 1.16; font-weight: 550; }
 .home-page .gh-strengths li { padding: 1.4em 0; }
 .home-page .gh-strengths li + li { border-top: 1px solid #fff6; }
-.home-page .gh-hero-bottom { display: flex; align-items: center; justify-content: space-between; padding-bottom: clamp(20px, 2.2vw, 42px); }
-.home-page .gh-hero-index { font-size: 1.05rem; }
+.home-page .gh-hero-bottom { display: flex; align-items: center; justify-content: flex-end; padding-bottom: clamp(20px, 2.2vw, 42px); }
 .home-page .gh-scroll .gh-icon { transform: rotate(90deg); }
 .home-page .gh-scroll { position: relative; padding-right: 11px; min-height: 40px; }
 .home-page .gh-scroll::after { content: ''; border: 1px solid #fff9; border-radius: 50%; width: 36px; height: 36px; position: absolute; right: 0; pointer-events: none; }
@@ -87,7 +83,6 @@ body.home-page {
 .home-page .gh-about { background: linear-gradient(90deg, #f1f0eef2 35%, #f1f0ee90), #f1f0ee url("assets/home/patterns/topographic_lines.svg") right center / auto 105% no-repeat; }
 .home-page .gh-about > .gh-wrap { padding-block: var(--gh-section-space); }
 .home-page :is(.gh-about-grid, .gh-contact-grid) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); gap: clamp(28px, 5vw, 96px); align-items: start; }
-.home-page .gh-about .gh-heading { display: grid; justify-content: start; gap: .7em; }
 .home-page .gh-about h2 { font-size: clamp(33px, 3.15vw, 61px); }
 .home-page .gh-about p { margin: 1.15em 0; }
 .home-page .gh-about .gh-pill { margin-top: .55em; }
@@ -114,14 +109,35 @@ body.home-page {
 .home-page .gh-service .gh-card-body { min-height: clamp(207px, 17.5vw, 336px); }
 .home-page .gh-service .gh-circle { background: var(--gh-ink); color: #fff; border-color: transparent; }
 .home-page .gh-tech {
-  background: linear-gradient(90deg, #131820c2 0%, #14191d24 72%),
-    linear-gradient(0deg, #19191bb8, transparent 70%),
+  background: linear-gradient(90deg, #131820d1 0%, #14191d40 72%),
+    linear-gradient(0deg, #19191bcc, #10151b20 76%),
     #23282d url("assets/home/photography/equipment.jpg") 77% center / cover no-repeat;
 }
 .home-page .gh-tech p { max-width: 38em; }
 .home-page .gh-tech .gh-grid { margin-top: clamp(58px, 8vw, 154px); }
-.home-page .gh-glass { border: 1px solid #ffffff45; background: linear-gradient(145deg, #282d32d4, #232323bc); }
-.home-page .gh-glass .gh-card-body { min-height: clamp(226px, 19.25vw, 370px); }
+.home-page .gh-glass {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: .8rem;
+  align-items: start;
+  justify-items: start;
+  border: 1px solid #ffffff45;
+  background: linear-gradient(145deg, #282d32b8, #232323a1);
+}
+.home-page .gh-glass > .gh-icon {
+  width: clamp(54px, 4.25vw, 66px);
+  height: clamp(54px, 4.25vw, 66px);
+}
+.home-page .gh-glass:nth-child(3) > .gh-icon { mask-size: 115%; }
+.home-page .gh-glass:nth-child(4) > .gh-icon { mask-size: 87%; }
+.home-page .gh-glass p { overflow-wrap: anywhere; }
+.home-page .gh-glass h3 {
+  font-size: clamp(16px, 1.35vw, 25px);
+  font-weight: 600;
+  line-height: 1.23;
+  overflow-wrap: anywhere;
+}
 .home-page .gh-glass .gh-circle { color: white; border-color: #ffffff70; }
 
 .home-page .gh-filters { display: flex; flex-wrap: wrap; gap: .55em; margin: clamp(21px, 2.2vw, 42px) 0 clamp(22px, 2.35vw, 45px); }
@@ -147,12 +163,12 @@ body.home-page {
   background: linear-gradient(90deg, #10161cdb, #131a2250 57%, transparent),
     #26323b url("assets/home/photography/safety.jpg") right center / cover no-repeat;
 }
-.home-page .gh-safety .gh-heading { display: grid; gap: .65em; max-width: 690px; }
+.home-page .gh-safety .gh-heading { max-width: 690px; }
 .home-page .gh-safety > .gh-wrap { padding-block: clamp(90px, 8.7vw, 168px); }
 .home-page .gh-safety p { max-width: 37em; margin: 1em 0 1.65em; }
 .home-page .gh-capabilities strong { font-size: clamp(17px, 1.45vw, 27px); }
 .home-page .gh-capabilities span { color: var(--gh-quiet); font-size: .83em; }
-.home-page .gh-contact-label { display: flex; align-items: center; gap: 1.15em; color: var(--gh-quiet); margin-bottom: 1.15em; }
+.home-page .gh-contact-label { color: var(--gh-quiet); margin-bottom: 1.15em; }
 .home-page .gh-contacts { background: #f3f2ef; }
 .home-page .gh-contacts h2 { font-size: clamp(36px, 4.4vw, 82px); }
 .home-page .gh-contacts h2 + p { margin: 1em 0 1.75em; }
@@ -196,7 +212,6 @@ body.home-page {
 @media (max-width: 1100px) {
   .home-page .gh-header nav { gap: 13px; }
   .home-page .gh-header .gh-brand small { display: none; }
-  .home-page .gh-glass .gh-card-body { min-height: 226px; }
 }
 @media (max-width: 900px) {
   .home-page .gh-footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -225,11 +240,9 @@ body.home-page {
   .home-page :is(.gh-about-grid, .gh-contact-grid) { grid-template-columns: 1fr; }
   .home-page .gh-heading { flex-wrap: wrap; gap: 10px 15px; }
   .home-page .gh-heading h2 { flex: 1 1 72%; }
-  .home-page .gh-index { gap: 6px; font-size: 13px; }
-  .home-page .gh-index::after { width: 12px; }
   .home-page .gh-heading .gh-more { margin-left: 0; }
   .home-page .gh-tech {
-    background: linear-gradient(180deg, #13182042, #1b232a 360px),
+    background: linear-gradient(180deg, #1318206b, #1b232a 360px),
       #1b232a url("assets/home/photography/equipment.jpg") 76% top / auto 360px no-repeat;
   }
   .home-page .gh-tech .gh-grid { margin-top: 53px; }
@@ -242,7 +255,6 @@ body.home-page {
   .home-page .gh-footer-inner .gh-brand { flex-direction: column; align-items: flex-start; gap: .25em; }
   .home-page .gh-press .gh-story .gh-card-body { min-height: auto; }
   .home-page .gh-three { grid-template-columns: 1fr; }
-  .home-page .gh-glass .gh-card-body { min-height: 226px; }
   .home-page .gh-capabilities li { padding: .65em .8em; font-size: 14px; }
 }
 
@@ -284,4 +296,9 @@ body.home-page {
 @media (max-width: 640px) {
   .home-page .gh-partner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-page .gh-partner-grid li:last-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 400px) {
+  .home-page .gh-tech .gh-grid { grid-template-columns: minmax(0, 1fr); grid-auto-rows: 1fr; }
+  .home-page .gh-glass { grid-row: auto; grid-template-rows: auto auto 1fr auto; }
 }

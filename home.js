@@ -15,8 +15,8 @@ const homeCircle = (href, title) =>
 const homeBrand = `<a class="gh-brand" href="#/home"><span>ГЕЛИОС</span><small>Геологоразведочная<br>научно-производственная компания</small></a>`;
 const homeNav = () => homeSections.map(([id, title]) =>
   `<a href="#/home/${id}">${title}</a>`).join('');
-const homeHeading = (number, title, action = '') =>
-  `<div class="gh-heading"><span class="gh-index" aria-hidden="true">${number}</span><h2>${title}</h2>${action}</div>`;
+const homeHeading = (title, action = '') =>
+  `<div class="gh-heading"><h2>${title}</h2>${action}</div>`;
 const homeBlock = (id, cls, body) =>
   `<section id="${id}" class="gh-section ${cls}" tabindex="-1"><div class="gh-wrap">${body}</div></section>`;
 const homeFilterIds = ['ore', 'engineering', 'marine', 'water', 'hydrocarbon'];
@@ -142,10 +142,10 @@ function homeMarkup() {
   }).join('');
   const technologyCards = homeTechnologyCards.map(([id, icon]) => {
     const [, title, description] = T.find(row => row[0] === id);
-    return `<article class="gh-card gh-glass"><div class="gh-card-body">
+    return `<article class="gh-card gh-card-body gh-glass">
       ${homeIcon('technology/' + icon + '-detail')}<h3>${safe(title)}</h3><p>${safe(description)}</p>
       ${homeCircle('tech/' + id, title)}
-    </div></article>`;
+    </article>`;
   }).join('');
   const filters = [['all', 'Все'], ...homeFilterIds
     .map(id => find('services', id))
@@ -174,13 +174,12 @@ function homeMarkup() {
       </ul>
     </div>
     <div class="gh-wrap gh-hero-bottom">
-      <span class="gh-hero-index" aria-hidden="true">01</span>
       ${homeLink('home/company', 'Прокрутите вниз', 'gh-scroll')}
     </div>
   </section>
   ${homeBlock('company', 'gh-about', `<div class="gh-about-grid">
     <div>
-      ${homeHeading('02', 'О компании')}
+      ${homeHeading('О компании')}
       <p>«Гелиос» объединяет полевые исследования, разработку аппаратуры и работу с геофизическими данными.</p>
       <p>Подбираем методы под геологическую задачу, сопоставляем результаты с исходными материалами и формируем рекомендации для дальнейших работ.</p>
       ${homeLink('about', 'Подробнее о компании')}
@@ -191,20 +190,20 @@ function homeMarkup() {
     </figure>
   </div>`)}
   ${homeBlock('services', 'gh-services', `
-    ${homeHeading('03', 'Наши услуги', homeLink('services', 'Все услуги', 'gh-more'))}
+    ${homeHeading('Наши услуги', homeLink('services', 'Все услуги', 'gh-more'))}
     <div class="gh-grid gh-four">${serviceCards}</div>`)}
   ${homeBlock('technology', 'gh-tech gh-dark', `
-    ${homeHeading('04', 'Технологии, ПО и разработки', homeLink('technologies', 'Все технологии', 'gh-more'))}
+    ${homeHeading('Технологии, ПО и разработки', homeLink('technologies', 'Все технологии', 'gh-more'))}
     <p>Методики съёмки, аппаратура, обработка и интерпретация данных.</p>
     <div class="gh-grid gh-four">${technologyCards}</div>`)}
   ${homeBlock('projects', 'gh-projects', `
-    ${homeHeading('05', 'Проекты и кейсы', homeLink('projects', 'Все проекты', 'gh-more'))}
+    ${homeHeading('Проекты и кейсы', homeLink('projects', 'Все проекты', 'gh-more'))}
     <p>Производственные работы, опытно-методические исследования и разработка технологий.</p>
     <div class="gh-filters" role="group" aria-label="Фильтр проектов">${filters.map(([id, title], index) =>
       `<button type="button" data-filter="${id}" aria-pressed="${index === 0}">${safe(title)}</button>`).join('')}</div>
     <div class="gh-grid gh-four" id="gh-project-results" aria-live="polite">${homeProjectCards('all')}</div>`)}
   ${homeBlock('partners', 'gh-partners gh-dark', `
-    ${homeHeading('06', 'Партнёры и сотрудничество', homeLink('about/partners', 'О сотрудничестве', 'gh-more'))}
+    ${homeHeading('Партнёры и сотрудничество', homeLink('about/partners', 'О сотрудничестве', 'gh-more'))}
     <p>Для комплексных задач объединяем необходимые методы, оборудование и компетенции. В каждом проекте отдельно показываем вклад участников.</p>
     <ul class="gh-partner-grid">
       <li><img src="${homeAssets}/partners/01_alrosa_white.svg" alt="АЛРОСА" loading="lazy"></li>
@@ -214,16 +213,16 @@ function homeMarkup() {
       <li>${homeLink('about/partners', '+ ещё', 'gh-partner-more')}</li>
     </ul>`)}
   ${homeBlock('press', 'gh-press', `
-    ${homeHeading('07', 'Пресс-центр', homeLink('materials', 'Все материалы', 'gh-more'))}
+    ${homeHeading('Пресс-центр', homeLink('materials', 'Все материалы', 'gh-more'))}
     <p>Понятно о геофизике, технологиях и результатах исследований.</p>
     <div class="gh-grid gh-three">${articles}</div>`)}
   ${homeBlock('safety', 'gh-safety gh-dark', `
-    ${homeHeading('08', 'Безопасность и ответственность')}
+    ${homeHeading('Безопасность и ответственность')}
     <p>Условия участка, влияние работ на окружающую среду и ограничения методов учитываются при подготовке программы исследований.</p>
     ${homeLink('about/safety', 'Подробнее')}`)}
   ${homeBlock('contacts', 'gh-contacts', `<div class="gh-contact-grid">
     <div>
-      <div class="gh-contact-label"><span class="gh-index" aria-hidden="true">09</span> Контакты</div>
+      <div class="gh-contact-label">Контакты</div>
       <h2>Обсудим ваш проект</h2>
       <p>Расскажите об участке, имеющихся данных и ожидаемом результате. Определим, какая программа исследований подходит для следующего этапа.</p>
       ${homeContactDetails(true)}
